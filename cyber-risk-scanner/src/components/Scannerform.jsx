@@ -7,7 +7,6 @@ export default function Scannerform(){
     const [loading, setLoading] = useState(false);
     const [result, setResult] = useState(null);
     const [error, setError] = useState(null);
-
     
     // function to handle the scanning of url
     async function handlescan() {
@@ -31,27 +30,31 @@ export default function Scannerform(){
         }
     }
     return(
-        <div>
-            <textarea
-            placeholder="Enter suspicious link"
+        <div className="flex flex-col items-center w-full">
+            <input className="border p-1.5 mt-2  rounded w-full h-auto text-center"
+            placeholder="Enter suspicious link here..."
             value={url}
-            onChange={(e)=> setUrl(e.target.value)}
+            onChange={(e)=> setUrl(e.target.value)
+            }
             onKeyDown={(e)=> {
                 if(e.key === "Enter" && !e.shiftKey){
                     e.preventDefault();
                     handlescan();
-            }}
+                }}
             }>
-            </textarea><br></br>
+            </input>
 
-            <button onClick={handlescan}
+            <p>{error && <p className="text-red-600">{error}</p>}</p>
+            
+            <button className="rounded-[10px] transition-colors duration-200 border border-solid border-2  border-white-200 hover:border-green-600 bg-1a1a1a  text-base font-semibold mt-2 py-2 px-4 cursor-pointer "
+            onClick={handlescan}
             disabled={loading || !url.trim()}>
 
             {loading ? "Scanning..." : "Scan Now"}</button>
 
             {
                 result && (
-                    <div>
+                    <div className="relative mt-2 bottom-0 left-0 w-full p-5  border-t shadow-lg max-h-1/2 overflow-y-auto">
                         <Result data={result}/>
                     </div>
                 )
