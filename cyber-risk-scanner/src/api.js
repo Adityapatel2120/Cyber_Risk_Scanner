@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API_KEY = import.meta.env.VITE_VT_API_KEY;
-console.log("API KEY:", API_KEY);
+// console.log("API KEY:", API_KEY);
 
 const client = axios.create({
   baseURL: "https://www.virustotal.com/api/v3",
