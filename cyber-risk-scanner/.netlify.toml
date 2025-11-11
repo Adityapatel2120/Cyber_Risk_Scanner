@@ -1,0 +1,16 @@
+[build]
+  base = "cyber-risk-scanner"
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[dev]
+  functions = "netlify/functions"
+  framework = "vite"
+
+# Optional: allows CORS for testing locally
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
+
