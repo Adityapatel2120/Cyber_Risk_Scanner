@@ -1,4 +1,5 @@
 import Scannerform from './components/Scannerform';
+import FeedbackForm from "./components/FeedbackForm";
 import './App.css';
 
 function App() {
@@ -33,6 +34,9 @@ function App() {
       <div className="mt-6 w-full max-w-xl">
         <Scannerform />
       </div>
+      hen below scanner:
+
+      <FeedbackForm />
 
       {/* Safety Tip */}
       <p className="mt-6 text-xs text-gray-500 text-center italic">
