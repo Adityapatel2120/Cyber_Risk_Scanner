@@ -34,8 +34,7 @@ function App() {
       <div className="mt-6 w-full max-w-xl">
         <Scannerform />
       </div>
-      hen below scanner:
-
+      
       <FeedbackForm />
 
       {/* Safety Tip */}
